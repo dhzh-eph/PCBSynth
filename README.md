@@ -10,7 +10,9 @@ https://www.mouser.com/pdfDocs/understanding-audio-jack-switches-and-schematics_
 
 
 https://www.youtube.com/watch?v=QBatvo8bCa4&list=PLHeL0JWdJLvTuGCyC3qvx0RM39YvopVQN&index=1&t=955s <-- audio jacks <br/>
-Distortion can occur if not using +VCC and -VCC since it would be limited to just +VCC and 0V (ground). In cases where one chooses to use two batteries for the +VCC and -VCC, one would require two batteries being used and with their pins wired to ground.
 
+Distortion can occur if not using +VCC and -VCC since it would be limited to just +VCC and 0V (ground). In cases where one chooses to use two batteries for the +VCC and -VCC, one would require two batteries being used and with their pins wired to ground. 
 
-oscillator source --> op-amp buffer --> output jack
+However, we will need a coupling capacitor after because the reference level of 0V between +VCC and -VCC is not necessarily 0V potential (primarily in cases where +VCC and -VCC are different values). This is also because it can block DC (prevents offset voltage), allows for headroom, while allowing AC and will hence protect the audio equipment.
+
+oscillator source --> op-amp buffer --> RC filter (highpass) --> voltage divider --> output jack
